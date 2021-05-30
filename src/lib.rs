@@ -30,7 +30,7 @@ pub extern "C" fn set_get(args: Args) -> Returns {
     );
     Returns {
         first: 1394,
-        sec: b"hello msg from Rust!".as_ptr().cast(),
+        sec: b"hello msg from Rust!\0".as_ptr().cast(),
         third: b"wchar string from Rust!"
             .iter()
             .map(|i| *i as i16)

@@ -10,7 +10,7 @@ int main() {
     };
     struct Returns ret = set_get(args);
     std::cout << "Returned data" << std::endl;
-    std::cout << ret.first << std::endl;
-    std::cout << ret.sec << std::endl;
-    std::cout << ret.third << std::endl;
+    std::cout << "first: " << ret.first << std::endl;
+    std::cout << "second: " << ret.sec << std::endl;
+    std::cout << "third: " << ret.third << std::endl;
 }
