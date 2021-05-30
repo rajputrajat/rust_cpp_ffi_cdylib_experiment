@@ -23,7 +23,10 @@ pub extern "C" fn set_get(args: Args) -> Returns {
     let third = unsafe { WideCStr::from_ptr_str(args.third.cast()) };
     println!(
         "from C - message: {:?}, first: {:?}, second: {:?}, third: {:?}. done!",
-        args.message, args.first, second, third
+        args.message,
+        args.first,
+        second,
+        third.to_string().unwrap()
     );
     Returns {
         first: 1394,
