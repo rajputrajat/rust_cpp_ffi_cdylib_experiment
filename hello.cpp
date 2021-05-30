@@ -12,5 +12,5 @@ int main() {
     std::cout << "Returned data" << std::endl;
     std::cout << "first: " << ret.first << std::endl;
     std::cout << "second: " << ret.sec << std::endl;
-    std::cout << "third: " << ret.third << std::endl;
+    std::wcout << L"third: " << ret.third << std::endl;
 }

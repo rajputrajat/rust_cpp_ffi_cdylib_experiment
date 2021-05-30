@@ -28,13 +28,16 @@ pub extern "C" fn set_get(args: Args) -> Returns {
         second,
         third.to_string().unwrap()
     );
-    Returns {
-        first: 1394,
-        sec: b"hello msg from Rust!\0".as_ptr().cast(),
-        third: b"wchar string from Rust!"
+    let third_ret = Box::new(
+        b"wchar string from Rust!"
             .iter()
             .map(|i| *i as i16)
             .collect::<Vec<_>>()
             .as_ptr(),
+    );
+    Returns {
+        first: 1394,
+        sec: b"hello msg from Rust!\0".as_ptr().cast(),
+        third: Box::leak(third_ret).cast(),
     }
 }
